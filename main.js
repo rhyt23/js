@@ -291,11 +291,11 @@ const jo = {};
 		},
 		cB = function(cK) {
 			var cH, cI, cQ, cN, cM, cP, cL, cO;
-
+			
 			function cJ(cU, cS, i) {
 				var cR = aQ[bJ]("li"),
 					cT = aQ[bJ]("span");
-				return I(cT, "btn btn-sm rounded-pill jt-icon-center"), cT[be] = i || cU, cT[bk + a2]("data-page", cU), cU == cS ? I(cT, "jt-btn-primary") : (I(cT, "jt-btn-light hover-btn-primary"), cT[cc + a4](G, function(cW) {
+				return I(cT, "page-link"), cT[be] = i || cU, cT[bk + a2]("data-page", cU), cU == cS ? I(cT, "jt-btn-primary") : (I(cT, "jt-btn-light hover-btn-primary"), cT[cc + a4](G, function(cW) {
 					var cV;
 					cW[ca](), 1 == (cO = cT[bB + a2]("data-page")) ? (cV = cI ? aG + "/search" + cN + "?max-results=" + cH + "&page=" + cO : aG, M[bf][X] = cV) : (cV = (cO - 1) * cH, Defer.js(aG + "/feeds/posts/summary/" + cQ + "?start-index=" + cV + "&alt=json&callback=jo." + e + "_date&max-results=1"))
 				})), cR[cy](cT), cR
@@ -307,12 +307,12 @@ const jo = {};
 					var cU = S(i, cO, cL, 5),
 						cR = aQ[bJ]("ul"),
 						cS = cU.totalPages;
-					1 != cU.currentPage && (i = cJ(cU.currentPage - 1, "", '<svg aria-hidden="true" class="jt-icon"><use xlink:href="#i-arrow-l"/></svg>'), cR[cy](i)), A(cU.pages, 1) || (cV = cJ(1, cU.currentPage, "1 . ."), cR[cy](cV));
+					1 != cU.currentPage && (i = cJ(cU.currentPage - 1, "", '<i class="w-icon-long-arrow-left"></i> Prev'), cR[cy](i)), A(cU.pages, 1) || (cV = cJ(1, cU.currentPage, "1 . ."), cR[cy](cV));
 					for (var cT = 0; cT < cU.pages[cx]; cT++) {
 						var cV = cJ(cU.pages[cT], cU.currentPage);
 						cR[cy](cV)
 					}
-					A(cU.pages, cS) || (cV = cJ(cS, cU.currentPage, ". . " + cS), cR[cy](cV)), cU.currentPage != cS && (cS = cJ(cU.currentPage + 1, "", '<svg aria-hidden="true" class="jt-icon"><use xlink:href="#i-arrow-r"/></svg>'), cR[cy](cS)), cK[be] = "", I(cR, "pagination mb-0"), cK[cy](cR), bz(cK, "visually-hidden")
+					A(cU.pages, cS) || (cV = cJ(cS, cU.currentPage, ". . " + cS), cR[cy](cV)), cU.currentPage != cS && (cS = cJ(cU.currentPage + 1, "", 'Next <i class="w-icon-long-arrow-right"></i>'), cR[cy](cS)), cK[be] = "", I(cR, "pagination"), cK[cy](cR), bz(cK, "visually-hidden")
 				}
 			}, jo[e + "_date"] = function(i) {
 				i = i.feed.entry[0], i = (i = i.published.$t[bc](0, 19) + i.published.$t[bc](23, 29))[D]("+", "%2B"), i = aG + "/search" + cN + "?updated-max=" + i + "&max-results=" + cL + "&page=" + cO;
