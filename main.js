@@ -1,5 +1,5 @@
-const jo = {};
-! function JetThemeScript() {
+const rh = {};
+! function ThemeScript() {
 	var M = window,
 		aQ = document,
 		a = setTimeout,
